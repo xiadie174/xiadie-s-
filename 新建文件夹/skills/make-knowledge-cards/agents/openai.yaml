@@ -1,0 +1,4 @@
+interface:
+  display_name: "知识卡片生成"
+  short_description: "把粘贴文本或本地 Markdown/TXT 文件提炼为 5～8 张单点聚焦的知识卡片"
+  default_prompt: "Use $make-knowledge-cards to convert the pasted text or local Markdown/TXT file into 5-8 structured knowledge cards, each with a title, core knowledge, concise explanation, and an example or self-test question."
