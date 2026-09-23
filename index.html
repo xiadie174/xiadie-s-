@@ -1,13 +1,37 @@
----
-layout: default
----
-<div class="post-list">
-    {% for post in site.posts %}
-    <article class="post-item">
-        <h2 class="post-title">
-            <a href=" ">{{ post.title }}</a >
-        </h2>
-        <p class="post-date">{{ post.date | date: "%Y-%m-%d" }}</p >
-    </article>
-    {% endfor %}
-</div>
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>xiadie的技术博客</title>
+    <style>
+        *{margin:0;padding:0;box-sizing:border-box;font-family:system-ui, sans-serif;}
+        .header-banner{
+            background:#777;
+            color:white;
+            text-align:center;
+            padding:60px 20px;
+        }
+        .header-banner h1{font-size:80px;font-weight:bold;}
+        .divider{width:120px;height:4px;background:white;margin:15px auto;}
+        .header-desc{font-size:28px;opacity:0.9;}
+        .container{max-width:900px;margin:40px auto;padding:0 20px;}
+        .post-item{margin:40px 0;padding-bottom:30px;border-bottom:1px solid #ccc;}
+        .post-title{font-size:42px;font-weight:bold;color:#222;text-decoration:none;display:block;}
+        .post-date{font-size:20px;color:#777;margin-top:10px;}
+    </style>
+</head>
+<body>
+    <div class="header-banner">
+        <h1>xiadie的技术博客</h1>
+        <div class="divider"></div>
+        <div class="header-desc">关注：网络安全、逆向、漏洞分析、开发</div>
+    </div>
+    <div class="container">
+        <div class="post-item">
+            <a class="post-title" href=" ">I'm here ready for the Cybersecurity world</a >
+            <div class="post-date">2026-09-23</div>
+        </div>
+    </div>
+</body>
+</html>
