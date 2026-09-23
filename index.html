@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
-/*顶部灰色横幅*/
+/* 顶部灰色横幅 */
 .banner{
   background:#666;
   color:white;
@@ -13,7 +13,7 @@
 }
 .banner h1{font-size:70px;margin:0;}
 .banner p{font-size:30px;}
-/*文章条目*/
+/* 文章条目样式 */
 .post-item{padding:30px 20px;border-bottom:1px solid #ddd;}
 .post-item h2{font-size:48px;margin:0;}
 .post-date{color:#777;font-size:22px;margin:8px 0;}
@@ -26,11 +26,13 @@
   <p>关注：网络安全、逆向、漏洞分析</p >
 </div>
 
-<!-- 第一篇文章，以后新增文章在这里复制粘贴一块 -->
+<!-- Jekyll自动循环读取_posts文件夹里所有文章 -->
+{% for post in site.posts %}
 <div class="post-item">
-  <h2><a href=" ">I'm here ready for the Cybersecurity world</a ></h2>
-  <div class="post-date">2026-09-23</div>
+  <h2><a href=" ">{{post.title}}</a ></h2>
+  <div class="post-date">{{post.date | date: "%Y-%m-%d"}}</div>
 </div>
+{% endfor %}
 
 </body>
 </html>
