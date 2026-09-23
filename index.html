@@ -1,40 +1,19 @@
----
 <!DOCTYPE html>
-<html>
+<html lang="zh-CN">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<style>
-/* 顶部灰色横幅 */
-.banner{
-  background:#666;
-  color:white;
-  text-align:center;
-  padding:60px 20px;
-}
-.banner h1{font-size:70px;margin:0;}
-.banner p{font-size:30px;}
-/* 文章条目样式 */
-.post-item{padding:30px 20px;border-bottom:1px solid #ddd;}
-.post-item h2{font-size:48px;margin:0;}
-.post-date{color:#777;font-size:22px;margin:8px 0;}
-.post-item a{color:black;text-decoration:none;}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ site.title }}</title>
+    <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
 </head>
 <body>
-<div class="banner">
-  <h1>我的技术博客</h1>
-  <p>关注：网络安全、逆向、漏洞分析</p >
-</div>
-
-<!-- Jekyll自动循环读取_posts文件夹里所有文章 -->
-{% for post in site.posts %}
-<div class="post-item">
-  <h2><a href=" ">{{post.title}}</a ></h2>
-  <div class="post-date">{{post.date | date: "%Y-%m-%d"}}</div>
-</div>
-{% endfor %}
-
+    <header class="site-header">
+        <h1 class="site-title">{{ site.title }}</h1>
+        <div class="divider"></div>
+        <p class="site-description">{{ site.description }}</p >
+    </header>
+    <main class="content">
+        {{ content }}
+    </main>
 </body>
 </html>
----
