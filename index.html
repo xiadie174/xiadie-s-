@@ -1,19 +1,13 @@
-<!DOCTYPE html>
-<html lang="zh-CN">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ site.title }}</title>
-    <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
-</head>
-<body>
-    <header class="site-header">
-        <h1 class="site-title">{{ site.title }}</h1>
-        <div class="divider"></div>
-        <p class="site-description">{{ site.description }}</p >
-    </header>
-    <main class="content">
-        {{ content }}
-    </main>
-</body>
-</html>
+---
+layout: default
+---
+<div class="post-list">
+    {% for post in site.posts %}
+    <article class="post-item">
+        <h2 class="post-title">
+            <a href=" ">{{ post.title }}</a >
+        </h2>
+        <p class="post-date">{{ post.date | date: "%Y-%m-%d" }}</p >
+    </article>
+    {% endfor %}
+</div>
