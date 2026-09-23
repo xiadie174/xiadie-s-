@@ -17,7 +17,18 @@
         .header-desc{font-size:28px;opacity:0.9;}
         .container{max-width:900px;margin:40px auto;padding:0 20px;}
         .post-item{margin:40px 0;padding-bottom:30px;border-bottom:1px solid #ccc;}
-        .post-title{font-size:42px;font-weight:bold;color:#222;text-decoration:none;display:block;}
+        .post-title{
+            font-size:42px;
+            font-weight:bold;
+            color:#222;
+            text-decoration:none;
+            display:block;
+            cursor:pointer;
+            pointer-events:auto; /* 强制开启点击 */
+        }
+        .post-title:hover{
+            color:#555;
+        }
         .post-date{font-size:20px;color:#777;margin-top:10px;}
     </style>
 </head>
@@ -29,6 +40,7 @@
     </div>
     <div class="container">
         <div class="post-item">
+            <!-- 用完整绝对链接，保证一定能跳转 -->
             <a class="post-title" href=" ">I'm here ready for the Cybersecurity world</a >
             <div class="post-date">2026-09-23</div>
         </div>
