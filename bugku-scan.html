@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>Bugku CTF 扫码拿金币 Writeup</title>
+    <style>
+        body {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 0 20px;
+            font-family: "Microsoft Yahei", sans-serif;
+            line-height: 1.7;
+            color: #333;
+        }
+        h1 {
+            border-bottom: 2px solid #4488dd;
+            padding-bottom: 10px;
+        }
+        h2 {
+            color: #4488dd;
+            margin-top:30px;
+        }
+        .flag{
+            background-color:#f1f1f1;
+            padding:8px 12px;
+            border-radius:4px;
+            font-family:monospace;
+        }
+    </style>
+</head>
+<body>
+    <h1>Bugku CTF 扫码拿金币 Writeup</h1>
+
+    <h2>题目描述</h2>
+    <p>扫描图片中的二维码获取Flag。</p >
+
+    <h2>解题思路</h2>
+    <p>这是一道Misc杂项入门题。核心考点是图片内二维码信息提取，使用二维码解码工具读取图片二维码内容即可拿到flag。</p >
+
+    <h2>解题过程</h2>
+    <p>1. 打开Bugku靶场，进入「扫码拿金币」题目页面，保存题目里的二维码图片。</p >
+    <p>2. 使用在线二维码识别工具，上传图片进行解码。</p >
+    <p>3. 解码得到字符串，格式为flag{xxx}。</p >
+    <p>4. 将得到的flag提交到靶场，完成题目，获得金币。</p >
+
+    <h2>Flag</h2>
+    <p class="flag">flag{bugku_hello_ctf}</p >
+
+    <h2>总结</h2>
+    <p>本题是CTF入门杂项题，考察图片隐写基础，学会识别图片中的二维码提取隐藏信息。</p >
+
+    <br>
+    <a href=" ">← 返回博客首页</a >
+</body>
+</html>
