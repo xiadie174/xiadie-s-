@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>Bugku CTF 计算器 Writeup</title>
+    <style>
+        body {max-width:900px;margin: 20px auto;padding:0 20px;font-family:system-ui;}
+        pre {background:#f4f4f4;padding:12px;border-radius:6px;overflow-x:auto;}
+    </style>
+</head>
+<body>
+<h1>Bugku CTF | 计算器 Writeup</h1>
+<h2>题目介绍</h2>
+<p>题目：计算器 WEB，分值10分。页面给出算术题，要求算出正确答案获取flag。</p >
+<h2>考点</h2>
+<p>前端表单限制绕过：maxlength前端输入长度限制。前端限制可以通过浏览器开发者工具修改，不能用来做安全校验。</p >
+<h2>解题过程</h2>
+<ol>
+<li>打开页面，出现一道加法计算题。</li>
+<li>发现输入框只能输入1位数字，无法填入多位数结果。</li>
+<li>F12打开开发者工具，定位输入框代码，属性 <code>maxlength="1"</code></li>
+<li>修改属性，改为 <code>maxlength="3"</code>，放开输入长度限制。</li>
+<li>填入算术结果，提交页面，得到flag。</li>
+</ol>
+<h2>知识点总结</h2>
+<p>前端的maxlength只是浏览器层面的限制，用户可以随意修改。后端不能只依靠前端校验数据。</p >
+</body>
+</html>
