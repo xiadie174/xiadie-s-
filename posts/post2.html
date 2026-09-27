@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>Bugku CTF 滑稽 Writeup</title>
+    <style>
+        body {max-width:900px;margin: 20px auto;padding:0 20px;font-family:system-ui;}
+        pre {background:#f4f4f4;padding:12px;border-radius:6px;overflow-x:auto;}
+    </style>
+</head>
+<body>
+<h1>Bugku CTF | 滑稽 Writeup</h1>
+<h2>题目介绍</h2>
+<p>题目：滑稽 WEB，分值10分，入门Web签到题。访问链接页面铺满滑稽表情。</p >
+<h2>考点</h2>
+<p>查看网页源代码，前端注释信息泄露。</p >
+<h2>解题过程</h2>
+<ol>
+<li>启动场景，访问题目链接，页面显示大量滑稽表情。</li>
+<li>快捷键 Ctrl+U 打开网页源代码。</li>
+<li>在HTML注释中找到flag。</li>
+<li>复制flag提交。</li>
+</ol>
+<h2>Flag</h2>
+<pre>flag{051d6e2448764426fa18cbcfba86c71d}</pre>
+<h2>总结</h2>
+<p>基础入门题。前端页面的注释不会在浏览器页面展示，但源代码可以直接读取，常用来考察基础网页源码查看能力。</p >
+</body>
+</html>
