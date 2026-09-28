@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>Bugku CTF｜alert Writeup</title>
+    <style>
+        body {max-width:900px;margin: 20px auto;padding:0 20px;font-family:system-ui;}
+        pre {background:#f4f4f4;padding:12px;border-radius:6px;overflow-x:auto;}
+    </style>
+</head>
+<body>
+<h1>Bugku CTF｜alert Writeup</h1>
+<h2>题目信息</h2>
+<p>靶场：Bugku CTF；题型：Web；分值：10分；考点：网页源码读取、HTML实体编码解码</p >
+<h2>题目描述</h2>
+<p>访问题目地址，页面持续弹出alert弹窗干扰浏览，页面看不到任何文字，flag隐藏在页面中。</p >
+<h2>解题过程</h2>
+<p>打开网页，浏览器不断弹出alert弹窗，反复点击确认会消耗大量时间。这里使用快捷键Ctrl+U直接查看网页源代码，该方式不会执行页面JavaScript，不会触发弹窗。</p >
+<p>滚动源码到页面最底端，找到一串&#数字;格式的HTML实体编码，每个数字代表字符的ASCII码。复制全部编码字符串，使用HTML实体解码工具解码，还原文本，得到flag。</p >
+<h2>知识点总结</h2>
+<p>JS弹窗仅仅是前端交互效果，网页源码在JS执行前就已经完整下发到浏览器，弹窗无法保护源码中的内容。HTML实体编码&#xxx;，是网页用于转义特殊字符的方式，浏览器渲染页面时自动解码，源码中保留数字形式。</p >
+<p>安全启示：任何前端页面的JavaScript都不能用来保护机密信息。所有前端源码、JS代码都可以被用户查看，敏感数据必须保存在服务端，不能写在HTML页面源码里。</p >
+</body>
+</html>
