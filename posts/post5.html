@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>Bugku CTF｜你必须让他停下 Writeup</title>
+    <style>
+        body {max-width:900px;margin: 20px auto;padding:0 20px;font-family:system-ui;}
+        pre {background:#f4f4f4;padding:12px;border-radius:6px;overflow-x:auto;}
+    </style>
+</head>
+<body>
+<h1>Bugku CTF｜你必须让他停下 Writeup</h1>
+<h2>题目信息</h2>
+<p>靶场：Bugku CTF；题型：Web；考点：JavaScript自动刷新、阻断JS执行、网页源码查看</p >
+<h2>题目描述</h2>
+<p>访问链接后页面持续自动刷新，图片不断轮换，提示当页面出现熊猫图片时，可以获取flag。</p >
+<h2>解题过程</h2>
+<p>页面使用setTimeout搭配location.reload()实现每隔500ms自动重载页面。如果使用网络面板抓包，请求会持续大量新增，难以筛选。</p >
+<p>解决方案：点击地址栏左侧安全锁，进入网站设置，阻止JavaScript运行。刷新页面，页面自动刷新功能停止。之后手动F5刷新页面，图片依次切换。不断手动刷新，直到页面出现熊猫图案。此时Ctrl+U查看网页源代码，源码中存放flag。</p >
+<h2>知识点总结</h2>
+<p>页面自动刷新由前端JS控制，禁用JS就可以停止页面重载。前端脚本只作用于浏览器本地，无法修改服务器返回内容。服务器每次收到访问请求，返回不同页面内容。前端JS无法保护秘密信息，所有返回浏览器的数据都可以被查看。</p >
+</body>
+</html>
