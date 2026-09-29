@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bugku Web｜GET Writeup</title>
+<style>
+body{font-family:system-ui; padding:20px; background:#f5f7fb;}
+.container{max-width:800px; margin:0 auto; background:#fff; padding:24px; border-radius:12px; box-shadow:0 2px 12px #00000012;}
+code{background:#f0f2f5; padding:2px 6px; border-radius:4px; font-family:monospace;}
+</style>
+</head>
+<body>
+<div class="container">
+<h1>Bugku Web｜GET Writeup</h1>
+<h2>题目描述</h2>
+<p>GET类型Web题，提示flag{}。</p >
+<h2>解题思路</h2>
+<p>本题考察GET传参。GET参数写在URL的?后面，服务端读取URL参数判断。</p >
+<h2>操作步骤</h2>
+<ol>
+<li>访问原始链接</li>
+<li>URL末尾拼接参数：<code>?what=flag</code></li>
+<li>完整地址：http://160.202.254.160:19221?what=flag</li>
+<li>访问得到flag</li>
+</ol>
+<h2>知识点</h2>
+<p>GET请求：参数附加在URL之后，使用?分隔URL和参数，多个参数用&分隔。</p >
+</div>
+</body>
+</html>
