@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bugku Web｜头等舱 Writeup</title>
+<style>
+body{font-family:system-ui; padding:20px; background:#f5f7fb;}
+.container{max-width:800px; margin:0 auto; background:#fff; padding:24px; border-radius:12px; box-shadow:0 2px 12px #00000012;}
+code{background:#f0f2f5; padding:2px 6px; border-radius:4px; font-family:monospace;}
+</style>
+</head>
+<body>
+<div class="container">
+<h1>Bugku Web｜头等舱 Writeup</h1>
+<h2>题目描述</h2>
+<p>访问页面空白，查看源代码无内容。提示：头等舱。</p >
+<h2>解题思路</h2>
+<p>“头等舱”暗示 <strong>head（HTTP头部）</strong>，flag放置在HTTP响应头Response Headers中，页面主体不会展示。</p >
+<h2>操作步骤</h2>
+<ol>
+<li>打开F12开发者工具，切换到【网络】面板</li>
+<li>勾选保留日志，刷新页面</li>
+<li>点击网页请求，查看【响应头】，找到flag</li>
+</ol>
+<h2>知识点</h2>
+<p>HTTP响应头可以由服务端自定义，数据可以放在头部，不渲染到网页正文。可以用浏览器Network面板、Burp Suite、curl抓包查看。</p >
+</div>
+</body>
+</html>
