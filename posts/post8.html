@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bugku Web｜POST Writeup</title>
+<style>
+body{font-family:system-ui; padding:20px; background:#f5f7fb;}
+.container{max-width:800px; margin:0 auto; background:#fff; padding:24px; border-radius:12px; box-shadow:0 2px 12px #00000012;}
+code{background:#f0f2f5; padding:2px 6px; border-radius:4px; font-family:monospace;}
+</style>
+</head>
+<body>
+<div class="container">
+<h1>Bugku Web｜POST Writeup</h1>
+<h2>题目描述</h2>
+<p>Web基础题型，题目名称POST，访问页面提示需要POST提交数据，GET传参无法获取flag。</p >
+<h2>解题思路</h2>
+<p>本题考察HTTP两种请求方法GET与POST的区别。GET参数放在URL地址栏；POST数据放在HTTP请求体中，无法直接通过浏览器地址栏提交。可以使用curl、Burp Suite、HackBar发送POST请求携带参数what=flag拿到flag。</p >
+<h2>工具操作步骤</h2>
+<h3>方式1：curl命令（推荐）</h3>
+<ol>
+<li>按下Win+R，输入cmd打开命令提示符</li>
+<li>输入命令：<code>curl -X POST http://160.202.254.160:18958 -d "what=flag"</code></li>
+<li>回车执行，终端输出内容中得到flag</li>
+</ol>
+<h3>方式2：Burp Suite抓包工具</h3>
+<ol>
+<li>启动Burp Suite，配置浏览器代理127.0.0.1:8080</li>
+<li>访问题目链接，Burp拦截到GET请求</li>
+<li>将请求方法GET改为POST，在请求头下方空一行，添加请求体：<code>what=flag</code></li>
+<li>点击Forward转发请求，在Response响应包查看flag</li>
+</ol>
+<h3>方式3：HackBar浏览器插件</h3>
+<ol>
+<li>打开HackBar，填入目标URL</li>
+<li>请求类型选择POST，Post data填写what=flag</li>
+<li>点击Execute执行，页面返回flag</li>
+</ol>
+<h2>知识点</h2>
+<p>GET：参数附加在URL后，用于读取资源；POST：数据存放于请求体，多用于提交表单。服务端代码校验请求方法，仅POST提交指定参数才返回flag。</p >
+</div>
+</body>
+</html>
