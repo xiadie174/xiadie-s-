@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bugku CTF | 聪明的小羊 Crypto Writeup</title>
+<style>
+body{font-family:system-ui; padding:20px; background:#f5f7fb; color:#222;}
+.container{max-width:900px; margin:0 auto; background:#fff; padding:24px; border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,0.08);}
+h1{font-size:22px;}
+pre{background:#f3f4f6; padding:12px; border-radius:8px; overflow-x:auto;}
+</style>
+</head>
+<body>
+<div class="container">
+<h1>Bugku CTF Crypto：聪明的小羊 Writeup</h1>
+<h2>题目信息</h2>
+<p>类型：Crypto密码学，分数：10，题目作者：harry</p >
+<h2>解题思路</h2>
+<p>描述“一只小羊翻过了2个栅栏”，提示这是2栏栅栏密码，将密文进行2栏栅栏解密即可得到flag。</p >
+<h2>工具</h2>
+<p>在线栅栏密码解密工具</p >
+<h2>操作步骤</h2>
+<ol>
+<li>复制题目给出密文：fa{fe13f590lg6d46d0d0}</li>
+<li>打开在线栅栏密码解密网站，设置栏数为2，粘贴密文解密。</li>
+<li>解密结果即为flag。</li>
+</ol>
+<h2>Payload & Flag</h2>
+<pre>密文：fa{fe13f590lg6d46d0d0}
+flag: flag{6fde4163df05d900}</pre>
+<h2>知识点总结</h2>
+<p>栅栏密码：把明文分行排列，横向读取拼接成密文。题目描述直接提示栅栏数量，是基础的古典密码。</p >
+</div>
+</body>
+</html>
