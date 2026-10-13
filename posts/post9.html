@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bugku MISC | 这是一张单纯的图片</title>
+<style>
+body{font-family:system-ui; padding:20px; background:#f5f7fb; color:#222;}
+.container{max-width:900px; margin:0 auto; background:#fff; padding:24px; border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,0.08);}
+h1{font-size:22px;}
+pre{background:#f3f4f6; padding:12px; border-radius:8px; overflow-x:auto;}
+</style>
+</head>
+<body>
+<div class="container">
+<h1>Bugku MISC：这是一张单纯的图片</h1>
+<h2>题目信息</h2>
+<p>类型：MISC隐写，分数：10，描述：key{}</p >
+<h2>解题思路</h2>
+<p>图片隐写，将HTML实体编码附加在图片文件末尾，需要读取文件尾部数据再解码。</p >
+<h2>工具</h2>
+<p>010 Editor / WinHex、HTML实体在线解码工具</p >
+<h2>操作步骤</h2>
+<ol>
+<li>下载图片文件到本地。</li>
+<li>使用010 Editor（或记事本）打开图片，滚动到文件最末尾，可以看到一串HTML实体编码。</li>
+<li>复制编码字符串，使用HTML实体解码工具进行解码。</li>
+<li>解码结果即为flag。</li>
+</ol>
+<h2>Payload & Flag</h2>
+<pre>编码：&#107;&#101;&#121;&#123;&#121;&#111;&#117;&#32;&#97;&#114;&#101;&#32;&#114;&#105;&#103;&#104;&#116;&#125;
+flag: key{you are right}</pre>
+<h2>知识点总结</h2>
+<p>文件尾部隐写：jpg图片解析到图片结束标记就停止渲染，后面附加的额外字符不会在图片预览中显示，需要读取原始文件字节才能看到。</p >
+</div>
+</body>
+</html>
