@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bugku CTF | ./- Crypto Writeup</title>
+<style>
+body{font-family:system-ui; padding:20px; background:#f5f7fb; color:#222;}
+.container{max-width:900px; margin:0 auto; background:#fff; padding:24px; border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,0.08);}
+h1{font-size:22px;}
+pre{background:#f3f4f6; padding:12px; border-radius:8px; overflow-x:auto;}
+</style>
+</head>
+<body>
+<div class="container">
+<h1>Bugku CTF Crypto：./- Writeup</h1>
+<h2>题目信息</h2>
+<p>类型：Crypto密码学，分数：10，题目作者：harry</p >
+<h2>解题思路</h2>
+<p>密文由点、横杠、斜杠组成，是典型摩尔斯电码，/用来分隔单个字符。解码后需要还原Unicode转义字符得到flag。</p >
+<h2>工具</h2>
+<p>在线摩尔斯电码解码网站</p >
+<h2>操作步骤</h2>
+<ol>
+<li>复制题目描述里全部密文字符串。</li>
+<li>打开在线摩斯密码解码器，粘贴密文，设置分隔符为 `/`。</li>
+<li>解码得到带有unicode转义的字符串 flag%u7bm0rse_code_1s_interest1n9!%u7d。</li>
+<li>将%u7b替换为{，%u7d替换为}，得到最终flag。</li>
+</ol>
+<h2>Payload & Flag</h2>
+<pre>密文：..-./.-../.-/--./----.--/-../...--/..-./-.-./-.../..-./.----/--.../..-./----./...--/----./----./...../-----/....-/-----.-
+flag: flag{m0rse_code_1s_interest1n9!}</pre>
+<h2>知识点总结</h2>
+<p>摩尔斯电码：.代表滴，-代表嗒；本题使用斜杠作为字符分隔符。解密结果有时会附带Unicode编码，需要手动还原成大括号。</p >
+</div>
+</body>
+</html>
